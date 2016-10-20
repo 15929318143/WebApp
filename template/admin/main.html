@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+	<title>Admin-Main</title>
+	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
+</head>
+<body style="overflow-x: hidden;">
+<div id="main">
+	<dl>
+		<dd>
+			<div>
+				<table cellpadding="0" cellspacing="0" border="1">
+					<caption>系统信息</caption>
+					<tr>
+						<td>操作系统</td>
+						<td class="operationSys">{$operationSys}</td>
+					</tr>
+					<tr>
+						<td>服务器版本</td>
+						<td class="serverVer">{$serverVer}</td>
+					</tr>
+					<tr>
+						<td>PHP版本</td>
+						<td class="phpVer">{$phpVer}</td>
+					</tr>
+					<tr>
+						<td>运行方式</td>
+						<td class="phpRunMode">{$phpRunMode}</td>
+					</tr>
+				</table>
+			</div>
+		</dd>
+		<dd>
+			<div>
+				<table cellpadding="0" cellspacing="0" border="1">
+					<caption>软件信息</caption>
+					<tr>
+						<td>系统名称</td>
+						<td class="sysName">{$sysName}</td>
+					</tr>
+					<tr>
+						<td>开发团队</td>
+						<td class="team">{$team}</td>
+					</tr>
+					<tr>
+						<td>公司地址</td>
+						<td class="webAddr"><a href="#">{$webAddr}</a></td>
+					</tr>
+					<tr>
+						<td>成功案例</td>
+						<td class="successCase">{$successCase}</td>
+					</tr>
+				</table>
+			</div>
+		</dd>
+	</dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+@charset='utf8';
+
+/*共同样式*/
+* { padding: 0; margin: 0; text-decoration: none;list-style: none; }
+li,dd,span { display: inline-block; }
+a:hover {text-decoration: underline;}
+iframe { border:none; }
+
+/********************************************************************************/
+/*                             后台首页初始化样式                               */
+/********************************************************************************/
+/*框架*/
+#topFrame { width: 100%;height: 130px; overflow: hidden;}
+#topFrame iframe { width: 100%;height: 100%; }
+#mainFrame { width: 100%; height: 600px; position: relative; }
+.leftFrame { width: 201px;height: 100%;position: absolute;left: 0;z-index: 10 }
+.rightFrame { width: 87.49%;height: 100%;position: absolute;right: 0;z-index: 0}
+#bottomFrame { width: 100%;height: 50px; }
+#bottomFrame iframe { width: 100%;height: 100%; }
+
+/*顶部*/
+#top { width: 100%; height: 90px;/*overflow: hidden;*/ }
+.logoBar { width: 100%; height: 60px; background: #2A2C2E;}
+.logoBar li {font: bold 30px/60px "Comic Sans MS", cursive, sans-serif;color: #fff;} 
+.logoBar li:last-child { float: right;margin-right:30px;}
+.logoBar img { width:104px;height: 60px; margin-left: 10px;float: left; }
+.navBar { width: 100%;height: 30px;background: #E1E0E0; }
+.navBar ul { float: right; width: 420px;height: 20px;}
+.navBar b { float: left;font: 14px/30px; padding: 6px;color: #000; }
+.navBar li { float: left; }
+.navBar li a {font:14px/30px "Miscrosoft YaHei"; color: #383838;padding: 0 18px;}
+.navBar li:nth-child(2) { background: url(../images/admin_icon/home.png) left center no-repeat transparent; } 
+.navBar li:nth-child(3) { background: url(../images/admin_icon/advance.png) left center no-repeat transparent; } 
+.navBar li:nth-child(4) { background: url(../images/admin_icon/backup.png) left center no-repeat transparent; } 
+.navBar li:nth-child(5) { background: url(../images/admin_icon/refresh.png) left center no-repeat transparent; } 
+.navBar li:nth-child(6) { background: url(../images/admin_icon/exit.png) left center no-repeat transparent; }
+#top .current { width: 100%;height: 40px;background-color: #CCCCCC; }
+#top .current li { float: left; }
+#top .current li:first-child { width: 190px;height: 40px;font: 18px/40px "Miscrosoft YaHei";color: #000;padding-left: 10px; }
+#top .current li:last-child { width: 100px;height: 40px; border-left: 1px solid #0B52D7;font: 18px/40px "Miscrosoft YaHei";color: #000;text-align: center; }
+
+/*左侧栏*/
+#leftBar { width: 200px; height: 551px; background: #505254;margin: 0 auto;}
+#userBox { width: 180px;height: 50px;margin: 0 auto; padding-bottom: 10px;}
+#userBox .face { width: 44px;height: 44px;float: left; margin-top: 6px;}
+#userBox .user { width: 130px;height: 44px;float: left; margin:6px 0 0 5px;}
+#userBox .user li { font:bold 14px/20px "Miscrosoft YaHei";color: #C4CEE0; }
+#leftNav { width: 100%;height: 500px;overflow-x: hidden; }
+#leftNav .option { cursor: pointer; width: 130px;border-left: 10px solid #505254;border-right: 10px solid #505254;border-top: 1px solid #505254;background: url(../images/admin_icon/plus.png)10px center no-repeat transparent;padding:10px 25px;background-color: #98A0A5;font:14px/16px "Miscrosoft YaHei";color: #505254; }
+.list { width: 180px; margin: 0 auto;}
+.list li { width: 100px; float: left;clear: both;background: url(../images/admin_icon/point.png) 25px center no-repeat transparent;background-color: #DCE5F0; padding: 5px 40px;}
+.list a { font:12px/16px "Miscrosoft YaHei";color: #505254; }
+.list li:hover { background-color: #EDF5FC; }
+
+/*中间主体*/
+#main { width: 100%;}
+#main a { color: #8603F5;text-decoration: underline; }
+#main dd { width: 100%;margin-bottom: 60px;}
+#main dd div { width: 720px;height: 130px;margin: 0 auto; }
+#main td { height: 30px; background: #CDCBCE; }
+#main td:first-child { width: 200px; text-align: center; font: bold 14px/30px Georgia, serif;color: #000;}
+#main td:last-child { width: 500px;text-align: left;padding-left: 10px;}
+#main caption { font: bold 16px/36px "Miscrosoft YaHei";padding: 10px 0; }
+
+/****************************************************************************************/
+
+#addAdmin { width: 100%;margin-top: 100px; }
+#addAdmin caption { width: 400px;font:bold 16px/60px "Miscrosoft YaHei";padding: 0px 0; text-align: center;}
+#addAdmin td { height: 10px; background: #CDCBCE;text-align: center; }
+#addAdmin td:first-child { width: 100px; font:bold 14px/40px "Miscrosoft YaHei"; }
+#addAdmin td:last-child { width: 300px; }
+#addAdmin input { width: 95%;height: 85%; background-color: #fff; text-align: center;}
+#addAdmin .hidden { display: none; }
+
+#adminList { width: 80%; margin: 0 auto;}
+#adminList caption { width: 90px; float: left;background-color: #E8E8E8;padding: 0px 5px;margin: 20px 0; }
+#adminList caption:hover { background-color: #505254; }
+#adminList caption:hover a { color: #fff; }
+#adminList caption a { font:18px/32px "Miscrosoft YaHei"; color: #000; }
+#adminList td {text-align: center; border: 1px solid #CCCCCC;padding: 10px ;}
+#adminList .field td {font:bold 12px/16px "Miscrosoft YaHei";color: #000;}
+#adminList .row td { font:normal 16px/16px "Miscrosoft YaHei";color:#505254;  }
+#adminList .row:hover { background: #F5F5F5; }
+#adminList .page { width: 100%; line-height: 50px;font-size:14px;font-family: "Miscrosoft YaHei";color: #403939}
+#adminList .page a { border:1px solid #CCCCCC;padding: 5px 10px; font:bold 14px/16px "Miscrosoft YaHei";color: #403939;margin: 10px 5px; }
+#adminList .page a:not(.disable):hover {text-decoration: none;background: #2424DE;color: #fff;font-weight: bold;}
+#adminList .page .current { background: #2424DE;color: #fff;font-weight: bold;padding: 6px 11px; }
+#adminList .page .disable { color: #E3E3E3;border:1px solid #E3E3E3; }
+#adminList .page .noborder { border:none; }
+#adminList .page input { width: 35px; height: 20px; margin: 2px;text-align: center;}
+#adminList form { display: inline-block; }
+
+#adminUpdate { width: 80%; margin: 0 auto;}
+#adminUpdate caption {font:bold 16px/32px "Miscrosoft YaHei"; width: 150px; float: left;background-color: #E8E8E8;padding:5px;margin: 20px 0; }
+#adminUpdate td,
+#adminUpdate th { text-align: center; border: 1px solid #CCCCCC;padding: 10px;}
+#adminUpdate input { text-align: center;width: 80%;height: 100%; padding: 5px;}
+#adminUpdate input[type='submit'] { margin-left:110px; margin-right: 20px; }
+#adminUpdate input[type='submit'],
+#adminUpdate input[type='reset'] { width: 100px; float: left; margin-top: 20px;}
+

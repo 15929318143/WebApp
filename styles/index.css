@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 公用样式 */
+* { padding: 0; margin: 0; list-style: none;font-size: 14px; text-decoration: none; font-family: "Microsoft YaHei";}
+a, span { color: #555555;line-height: 30px;}
+a:hover { color: red; }
+li,span { display: inline-block; }
+input { outline: none; border: none; background: none;}
+.comWidth { width: 1000px;margin: 0 auto;}
+.leftFloat { float: left;}
+.rightFloat { float: right;}
+.hidden { display: none; }
+.display { display: block;}
+.clearBoth { clear: both; }
+.bold {font-weight: bold;}
+
+/* 顶部样式 */
+#header { width: 100%;height: 150px; }
+.topBar { width: 100%;height: 30px; }
+.topBar .left {background: url(../images/icon/xing.gif) left 8px no-repeat transparent; padding:4px 0 0 14px;}
+.topBar .left a { font:bold 14px/18px "Microsoft YaHei";color: #656565;padding-left: 2px; }
+.topBar .right span { color: #000; }
+.logoBar { width: 100%;height: 85px; background: #1D7AD9; }
+.logoBar .left { margin: 6px 0 0 40px; }
+.logoBar .middle { margin: 22px 30px 0 180px; }
+.logoBar input[type='text'] { width:360px;height: 35px;background-color: #fff; }
+.logoBar input[type='submit'] { width: 70px;height: 35px;background-color: #FF8C00;color: #fff;}
+.logoBar .right { width: 145px;height: 35px;background-color: #FF8C00;margin-top:22px; }
+.logoBar .shopCar {width: 47px; height: 32px; background: url(../images/icon/shopCar.jpg)10px center no-repeat transparent;padding:3px 0px 0 40px;color: #fff;border-right:1px solid #E27A00;  } 
+.logoBar .message {width: 20px; height: 32px; background: url(../images/icon/sj.jpg)33px center no-repeat transparent;padding:3px 15px 0 20px;color: #fff; border-left:1px solid #FF9C01;} 
+.navBar { width: 100%;height: 35px;background: #1369C0; }
+.navBar .left {width: 190px;line-height: 35px; font-size: 15px; font-weight: bold;color: #fff;text-align: center; background: url(../images/icon/down.jpg) 150px center no-repeat transparent;/* padding:0 0 65px 40px; */}
+.navBar .right a { float: left;color: #fff;width: 106px; line-height: 35px;text-align: center; }
+.navBar .right a:hover { background-color: #4593FD; }
+.navBar .active {background-color: #4593FD;}
+
+/* 最底部样式 */
+#footer { width: 100%; height: 227px; background: #D4D4D4; text-align: center; float: left; position: relative;margin-top: 50px;}
+#footer p:nth-child(1) { font-size: 12px; font-weight: bold; color: #262626; position: absolute; right: 0; left: 0; top: 55px; }
+#footer p:nth-child(1) a { font-size: 12px; font-weight: bold; color: #262626; }
+#footer p:nth-child(2) { font-size: 12px; color: #050505; margin-top: 10px;  position: absolute; right: 0; left: 0; top: 75px; }
+#footer p:nth-child(3) {  position: absolute; right: 0; left: 0; top: 105px; }
+#footer p:nth-child(3) img { margin: 33px 11.5px 0; }
+
+/* 商品分类 */
+#content {width: 100%; }
+.shopClass { position: relative; }
+.leftBar { width: 189px;}
+.shopClassList { width: 189px;height: 63px;border-top: 1px solid #5AA1FE;border-bottom: 1px solid #3487F2;border-left: 1px solid #4B96F7;background-color: #4593FD; }
+.shopClassList a { float: left; color: #fff;margin-right: 5px;font-size: 12px;line-height: 16px;}
+.shopClassList ul ,
+.shopClassList li { margin-top: 5px; }
+.shopClassList .left { width: 164px;height: 100%;padding-left: 10px; }
+.shopClassList .right { width: 15px;height: 100%; }
+.shopClassList .ownBg { padding: 0px 10px; background: #106AC0;text-decoration: underline;border-radius: 20px;font-weight: normal; }
+.shopClassList:hover { background-color: #FFFFFF; }
+.shopClassList:hover a { color: #000; }
+.shopClassList:hover .ownBg { color: #fff; }
+.shopClassList a:hover { text-decoration: underline;}
+
+/* 弹出菜单 */
+.popList { width: 560px; height: 100%; float: left; background: #fff; margin-left: 1px;}
+.kinds { width: 560px; border-bottom: 1px solid #DCE2EA; border-right: 1px solid #DCE2EA; float: left; padding: 8.7px 0;}
+.kinds dl {  margin-left: 10px; }
+.kinds dt { height: 14px; font-size: 14px; font-weight: bold; color: #5B87CA; }
+.kinds dd { padding-left: 70px; margin-top:-18px; }
+.kinds a { font-size: 12px; color: #787878; padding-left: 5px;}
+.kinds a:hover { text-decoration: underline; }
+.kinds .label { color: #F38906; }
+
+/* banner */
+.bigBan { position: absolute;top: 0;left: 0; z-index: -1;}
+.bigBan .banner {width: 810px;height:326px; float:right; position:relative; overflow:hidden;}
+.imgBox {width: 1620px;height:326px; position:absolute; left:0;}
+.imgBox li {float:left;}
+.imgBox img {display:block;width: 810px;height:325px;}
+.imgIndex { position:absolute; left:0; bottom:15px; width:100%; text-align:center;}
+.imgIndex a {width:20px; height:5px; overflow:hidden; background-color:#fff; display:inline-block; margin:0 3px;}
+.imgIndex .active{background-color:#FF7700;}
+
+/* 家用电脑 */
+.showTitle {width: 100%; height: 44px;margin: 15px 0; }
+.showTitle .left { width: 110px;line-height: 26px;font:26px/44px "Microsoft YaHei";background: url(../images/icon/shopIcon.jpg) left center no-repeat transparent; padding-left: 60px; }
+.showTitle .more { font: 12px/14px "Microsoft YaHei";color: #616161; }
+.showTitle .more:hover {text-decoration: underline;}
+
+.smallBan { width: 190px;height: 400px;float:left; position:relative; overflow:hidden; }
+.imgBox2 {width: 380px;height:400px; position:absolute; left:0;}
+.imgBox2 li {float:left;}
+.imgBox2 img {display:block;width: 190px;height:400px;}
+.imgIndex2 { position:absolute; left:0; bottom:15px; width:100%; text-align:center;}
+.imgIndex2 a {width:20px; height:5px; overflow:hidden; background-color:#fff; display:inline-block; margin:0 3px;}
+.imgIndex2 .active{background-color:#FF7700;}
+
+.imgList { width: 810px; border-top: 1px solid #DCE2EA; border-bottom: 4px solid #F46D01;}
+.picBox { width: 201.5px; height: 395px; border-right: 1px solid #DCE2EA; text-align: center;}
+.picBox .upPic {width: 100%;height: 279px; border-bottom: 1px solid #DCE2EA;}
+.picBox .upPic img { width: 150px;height:170px; }
+.picBox .downPic { width: 100%;height: 115px; }
+.picBox .downPic img {width: 70px; height: 73px;padding: 20px 12px; float: left;}
+.picBox .downPic p { width: 100px;height: 20px;float: left;padding: 30px 0;font-size: 12px; text-align: left; }
+.picBox .p1 { font:bold 16px/30px "Microsoft YaHei"; }
+.picBox .p2,
+.picBox .p3 { font: 14px/16px 'Microsoft YaHei';color: #FF8800; }
+
+
+

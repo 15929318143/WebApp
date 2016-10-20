@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+	<title>Admin-LeftBar</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/admin.css"/>
+	<script type="text/javascript" src='../../scripts/jquery-3.1.0.min.js'></script>
+	<script type="text/javascript" src='../../scripts/admin.js'></script>
+</head>
+<body>
+<div id="leftBar">
+	<div id="userBox">
+		<div class="face"><img src="../../images/admin_icon/member.gif"></div>
+		<div class="user">
+			<ul>
+				<li>用户：admin</li>
+				<li>权限：超级管理员</li>
+			</ul>
+		</div>
+	</div>
+	<div id="leftNav">
+		<ul>
+			<li>
+				<div class="option">分类管理</div>
+				<ul class="list">
+					<li><a href="#">添加分类</a></li>
+					<li><a href="#">分类列表</a></li>
+					<li><a href="#">栏目管理</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="option">订单管理</div>
+				<ul class="list">
+					<li><a href="#">分组权限</a></li>
+					<li><a href="#">级别权限</a></li>
+					<li><a href="#">角色管理</a></li>
+					<li><a href="#">自定义权限</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="option">用户管理</div>
+				<ul class="list">
+					<li><a href="#">分组权限</a></li>
+					<li><a href="#">级别权限</a></li>
+					<li><a href="#">角色管理</a></li>
+					<li><a href="#">自定义权限</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="option">管理员管理</div>
+				<ul class="list">
+					<li><a href="../../admin.php?controller=admin&method=addAdminPage" target="rightFrame">添加管理员</a></li>
+					<li><a href="../../admin.php?controller=admin&method=adminList" target="rightFrame">管理员列表</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
