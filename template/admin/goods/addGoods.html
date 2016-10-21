@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>添加管理员</title>
+	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
+</head>
+<body>
+<center>
+<div id="addGoods">
+		<form action="admin.php?controller=goods&method=addGoods" method="post" class="{$hidden|default:''}">
+			<table cellspacing="0" cellpadding="0" border="0" width="100%"> 
+				<caption>添加商品</caption>
+				<tr>
+					<td width="30%">商品名称</td>
+					<td width="70%"><input type="text" name="gName" placeholder="请输入商品名称"></td>
+				</tr>
+				<tr>
+					<td width="30%">商品分类</td>
+					<td width="70%">
+						<select name="gId">
+							{}
+							<option value="{}">{分类名称}</option>
+							{}
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="30%">商品货号</td>
+					<td width="70%"><input type="text" name="gLabel" placeholder="请输入分类名称"></td>
+				</tr>
+				<tr>
+					<td width="30%">商品数量</td>
+					<td width="70%"><input type="text" name="gSum" placeholder="请输入分类名称"></td>
+				</tr>
+				<tr>
+					<td width="30%">商品市场价</td>
+					<td width="70%"><input type="text" name="mPrice" placeholder="请输入分类名称"></td>
+				</tr>
+				<tr>
+					<td width="30%">商品东东价</td>
+					<td width="70%"><input type="text" name="gPrice" placeholder="请输入分类名称"></td>
+				</tr>
+				<tr>
+					<td width="30%">商品描述</td>
+					<td width="70%"><input type="text" name="gDesc" placeholder="请输入分类名称"></td>
+				</tr>
+				<tr>
+					<td width="30%">商品图像</td>
+					<td width="70%"><input type="text" name="gImg" placeholder="请输入分类名称"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" name="submit" value="添加分类"></td>
+				</tr>
+			</table>
+		</form>
+		{$msg|default:''}
+</div>
+</center>
+</body>
+</html>

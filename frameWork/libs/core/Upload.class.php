@@ -10,7 +10,7 @@ class Upload {
 	private $path;//文件保存目录
 	private $files;//上传文件
 	
-	public function __construct($files, $maxSize=2097152, $allowExt=array(), $flag=true, $path='uploads') {
+	public function __construct($files, $path='uploads', $maxSize=2097152, $allowExt=array(), $flag=true) {
 		$this->maxSize = $maxSize;
 		$this->allowExt = empty($allowExt)?$this->allow_ext():$allowExt;
 		$this->flag = $flag;
@@ -34,11 +34,11 @@ class Upload {
 			}
 			if (is_array($file['name'])) {
 				foreach ($file['name'] as $key => $value) {
-					$res[$i]['name'] = $file['name'][$key];
-					$res[$i]['type'] = $file['type'][$key];
+					$res[$i]['name']     = $file['name'][$key];
+					$res[$i]['type']     = $file['type'][$key];
 					$res[$i]['tmp_name'] = $file['tmp_name'][$key];
-					$res[$i]['error'] = $file['error'][$key];
-					$res[$i]['size'] = $file['size'][$key];
+					$res[$i]['error']    = $file['error'][$key];
+					$res[$i]['size']     = $file['size'][$key];
 					$i++;
 				}
 			}
@@ -68,12 +68,12 @@ class Upload {
 						$res[] = "没有选择上传文件";
 						break;
 					case 6:
-						$res[] = "没有临时目录";
+						$res[] = "没有找到临时目录";
 						break;
 					case 7:
 						$res[] = $file['name']."文件不可写";
 					case 8:
-						$res[] = "PHP扩展程序中断上传文件";
+						$res[] = "PHP扩展程序中断文件上传";
 						break;
 				}
 				continue;
@@ -90,7 +90,7 @@ class Upload {
 					continue;
 				}
 				if (!is_uploaded_file($file['tmp_name'])) {
-					$res[] = $file['name'].'非法上传方式';
+					$res[] = $file['name'].'通过非HTTP POST方式上传';
 					continue;
 				}
 				if ($flag) {
@@ -132,4 +132,11 @@ class Upload {
 		return $path;
 	}
 }
+/*header("Content-Tyep:text/html; charset=utf8");
+require_once('Upload.class.php');
+$upload = new upload($_FILES);
+$res = $upload->upload();
+echo "<pre>";
+var_dump($_FILES);
+print_r($res);*/
 ?>
