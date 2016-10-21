@@ -1,11 +1,39 @@
+<?php
+/* Smarty version 3.1.30, created on 2016-10-21 04:26:51
+  from "F:\wamp64\www\Github\WebApp\template\admin\left.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5809990bbf90d6_85918792',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2cf1cd230f521b0539a6efcaca67d6991dded49a' => 
+    array (
+      0 => 'F:\\wamp64\\www\\Github\\WebApp\\template\\admin\\left.html',
+      1 => 1477024009,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5809990bbf90d6_85918792 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
 	<title>Admin-LeftBar</title>
 	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
-	<script type="text/javascript" src='scripts/jquery-3.1.0.min.js'></script>
-	<script type="text/javascript" src='scripts/admin.js'></script>
+	<?php echo '<script'; ?>
+ type="text/javascript" src='scripts/jquery-3.1.0.min.js'><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src='scripts/admin.js'><?php echo '</script'; ?>
+>
 </head>
 <body>
 <div id="leftBar">
@@ -57,4 +85,5 @@
 	</div>
 </div>
 </body>
-</html>
+</html><?php }
+}

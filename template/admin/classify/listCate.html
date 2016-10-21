@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>管理员列表</title>
+	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
+	<script type="text/javascript" src='scripts/jquery-3.1.0.min.js'></script>
+	<script type="text/javascript" src='scripts/listCate.js'></script>
+</head>
+<body>
+<div id="adminList">
+	<center>
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<caption><a href="admin.php?controller=classify&method=addCate">添加</a></caption>
+			<tr style="background-color: #E8E8E8;" class="field">
+				<td width="10%">编号</td>
+				<td width="30%">分类名称</td>
+				<td width="20%" colspan="2">操作</td>
+			</tr>
+			{for $i=0 to ($rows|@count)-1 }
+			<tr class="row">
+				<td>{$i}</td>
+				<td>{$rows[$i].cName}</td>
+				<td><a href="admin.php?controller=classify&method=updateCate&id={$rows[$i].id}">编辑</a></td>
+				<td><a href="admin.php?controller=classify&method=deleteCate&id={$rows[$i].id}" class="del">删除</a></td>
+			</tr>
+			{forelse}
+			<tr class="row">
+				<td colspan="5">暂无分类，是否<a href="admin.php?controller=classify&method=addCate">添加</a>？</td>
+			</tr>
+			{/for}
+		</table>
+		{$pageBan['pageBan']|default:''}
+	</center>
+</div>
+</body>
+</html>

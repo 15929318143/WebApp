@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>添加管理员</title>
+	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
+</head>
+<body>
+<center>
+<div id="addCate">
+		<form action="admin.php?controller=classify&method=addCate" method="post" class="{$hidden|default:''}">
+			<table cellspacing="0" cellpadding="0" border="0" width="100%"> 
+				<caption>添加分类</caption>
+				<tr>
+					<td width="30%">分类名称:</td>
+					<td width="70%"><input type="text" name="cName" placeholder="请输入分类名称"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" name="submit" value="添加分类"></td>
+				</tr>
+			</table>
+		</form>
+		{$msg|default:''}
+</div>
+</center>
+</body>
+</html>

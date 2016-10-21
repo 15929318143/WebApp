@@ -5,6 +5,7 @@
 li,dd,span { display: inline-block; }
 a:hover {text-decoration: underline;}
 iframe { border:none; }
+.hidden { display: none; }
 
 /********************************************************************************/
 /*                             后台首页初始化样式                               */
@@ -64,13 +65,13 @@ iframe { border:none; }
 
 /****************************************************************************************/
 
-#addAdmin { width: 100%;margin-top: 100px; }
-#addAdmin caption { width: 400px;font:bold 16px/60px "Miscrosoft YaHei";padding: 0px 0; text-align: center;}
-#addAdmin td { height: 10px; background: #CDCBCE;text-align: center; }
-#addAdmin td:first-child { width: 100px; font:bold 14px/40px "Miscrosoft YaHei"; }
-#addAdmin td:last-child { width: 300px; }
-#addAdmin input { width: 95%;height: 85%; background-color: #fff; text-align: center;}
-#addAdmin .hidden { display: none; }
+#addAdmin { width: 400px;margin-top: 100px;font:14px/30px 'Miscrosoft YaHei';color: #505254;margin:0 auto; }
+#addAdmin caption { font: 30px/100px 'Miscrosoft YaHei'; }
+#addAdmin td { border:1px solid #DCE5F0;font:14px/30px 'Miscrosoft YaHei';color: #505254; text-align: center; background: #CDCBCE;}
+#addAdmin input[type='password'],
+#addAdmin input[type='text'] { width: 95%;padding: 5px 0;text-align: center; }
+#addAdmin input[type='submit'] { float: left;margin-left: 20px; padding: 5px 10px;}
+#addAdmin a { font-weight: bold;font-size: 18px; }
 
 #adminList { width: 80%; margin: 0 auto;}
 #adminList caption { width: 90px; float: left;background-color: #E8E8E8;padding: 0px 5px;margin: 20px 0; }
@@ -99,3 +100,13 @@ iframe { border:none; }
 #adminUpdate input[type='submit'],
 #adminUpdate input[type='reset'] { width: 100px; float: left; margin-top: 20px;}
 
+/******************************************/
+/*                  分类管理              */
+/******************************************/
+
+#addCate { width: 500px;margin-top: 100px;font:14px/30px 'Miscrosoft YaHei';color: #505254; }
+#addCate caption { font: 30px/60px 'Miscrosoft YaHei'; }
+#addCate td { border:1px solid #DCE5F0;font:14px/30px 'Miscrosoft YaHei';color: #505254; text-align: center; background: #CDCBCE;}
+#addCate input[type='text'] { width: 95%;padding: 5px 0;text-align: center; }
+#addCate input[type='submit'] { float: left;margin-left: 20px; padding: 5px 10px;}
+#addCate a { font-weight: bold;font-size: 18px; }

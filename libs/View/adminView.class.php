@@ -24,6 +24,10 @@ class adminView {
 		VIEW::display('template/admin/main.html');
 	}
 
+	public function left() {
+		VIEW::display('template/admin/left.html');
+	}
+
 	public function addAdminPage() {
 		VIEW::display('template/admin/addAdmin.html');
 	}

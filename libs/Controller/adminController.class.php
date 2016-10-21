@@ -32,6 +32,11 @@
 			$view->top();
 		}
 
+		public function left() {
+			$view = V('admin');
+			$view->left();
+		}
+
 		//后台登录页
 		public function login() {
 			//检查是否设置自动登录，若已设置，则直接跳到后台首页

@@ -1,10 +1,36 @@
+<?php
+/* Smarty version 3.1.30, created on 2016-10-21 04:21:40
+  from "F:\wamp64\www\Github\WebApp\template\admin\admin.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_580997d4e9ae80_78047587',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3e5bf9333ab626551b519fde2f3e3b479b6ea7ad' => 
+    array (
+      0 => 'F:\\wamp64\\www\\Github\\WebApp\\template\\admin\\admin.html',
+      1 => 1477018740,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_580997d4e9ae80_78047587 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
 	<title>后台首页</title>
 	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
-	<script type="text/javascript" src='scripts/jquery-3.1.0.min.js'></script>
+	<?php echo '<script'; ?>
+ type="text/javascript" src='scripts/jquery-3.1.0.min.js'><?php echo '</script'; ?>
+>
 </head>
 <!-- 构架样式
 <frameset rows="90px, *, 190px" cols="*" frameborder="yes" border="1" framespacing="0">
@@ -34,4 +60,5 @@
 		<iframe src="template/admin/bottom.html" name="bottomFrame" class="bottomFrame"></iframe>
 	</div>
 </body>
-</html>
+</html><?php }
+}

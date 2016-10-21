@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2016-10-21 08:04:42
+  from "F:\wamp64\www\Github\WebApp\template\admin\addAdmin.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5809cc1a8479e3_27216690',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'beed2269ab43569be2aae9379cb8a247780c3472' => 
+    array (
+      0 => 'F:\\wamp64\\www\\Github\\WebApp\\template\\admin\\addAdmin.html',
+      1 => 1477037079,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5809cc1a8479e3_27216690 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,4 +55,5 @@
 	</center>
 </div>
 </body>
-</html>
+</html><?php }
+}

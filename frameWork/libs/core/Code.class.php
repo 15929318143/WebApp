@@ -116,7 +116,7 @@ class Code {
     	imagedestroy($this->image);
     }
 }
-/*$font = 'F:\wamp64\www\shopAdmin\fonts\msyhbd.ttc';
+/*$font = 'F:\wamp64\www\Github\WebApp\fonts\msyhbd.ttc';
 $code = new Code($font);
 $code->createImage();*/
 ?>
