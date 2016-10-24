@@ -2,11 +2,14 @@
 	class adminController {
 
 		private $admin = "";//当前管理员
+		public static $view;
+		public static $model;
 
 		public function __construct() {
 			//判断当前是否已登录admin模型
-			$model = M("admin");
-			$this->admin = $model->getAdmin();
+			self::$model = M("admin");
+			self::$view = V("admin");
+			$this->admin = self::$model->getAdmin();
 			//如果不是登录页，而且没有登录，就跳转到登录页
 			if (empty($this->admin)&&(FUCK::$method!=="login")) {
 				$this->showMessage("请登录后再操作", "admin.php?controller=admin&method=login");
@@ -16,25 +19,21 @@
 
 		//后台首页
 		public function admin() {
-			$view = V("admin");
-			$view->admin();
+			self::$view->admin();
 		}
 
 		//后台主页
 		public function main() {
-			$view = V("admin");
-			$view->main();
+			self::$view->main();
 		}
 
 		//后台顶部
 		public function top() {
-			$view = V("admin");
-			$view->top();
+			self::$view->top();
 		}
 
 		public function left() {
-			$view = V('admin');
-			$view->left();
+			self::$view->left();
 		}
 
 		//后台登录页
@@ -46,14 +45,12 @@
 			if ($_POST) {
 				$this->checkLogin();
 			} else {
-				$view = V("admin");
-				$view->login();
+				self::$view->login();
 			}
 		}
 
 		public function addAdmin() {
-			$model = M("admin");
-			$status = $model->addAdmin();
+			$status = self::$model->addAdmin();
 			switch ($status) {
 				case 0:
 					$this->showMessage("添加管理员成功", "admin.php?controller=admin&method=adminList");
@@ -80,15 +77,13 @@
 		}
 
 		public function addAdminPage() {
-			$view = V("admin");
-			$view->addAdminPage();
+			self::$view->addAdminPage();
 		}
 
 		public function logout() {
-			$model = M("admin");
-			if ($model->logout()) {
+			if (self::$model->logout()) {
 				//设置当前管理员为空
-				$this->admin = $model->getAdmin();
+				$this->admin = self::$model->getAdmin();
 				//并跳转到登录页	
 				$this->showMessage("退出登录成功", "admin.php?controller=admin&method=login");
 			} else {
@@ -97,14 +92,13 @@
 		}
 
 		public function adminList() {
-			$model = M("admin");
-			$model->adminList();
+			$data = self::$model->adminList();
+			self::$view->adminList($data);
 		}
 		
 		public function adminUpdate() {
 			if ($_POST) {
-				$model = M("admin");
-				$status = $model->adminUpdate();
+				$status = self::$model->adminUpdate();
 				switch ($status) {
 					case 0:
 						$this->showMessage("管理员更新信息成功", "admin.php?controller=admin&method=adminList");
@@ -136,8 +130,7 @@
 				}
 				//根据id查询记录
 				if (isset($id)) {
-					$model = M("admin");	
-					$row = $model->getAdminById($id)[0];
+					$row = self::$model->getAdminById($id)[0];
 					$row["password"] = md5($row["password"]);
 				} else {
 					$this->showMessage("当前ID不存在", "admin.php?controller=admin&method=adminList");
@@ -148,16 +141,14 @@
 						$this->showMessage("当前管理员已经登录，不可修改", "admin.php?controller=admin&method=adminList");
 					} else {
 					//若不是当前已登录管理员，则跳到修改页面
-						$view = V("admin");
-						$view->adminUpdate($row);	
+						self::$view->adminUpdate($row);	
 					}
 				}
 			}
 		}
 					
 		public function adminDelete() {
-			$model = M('admin');
-			$status = $model->adminDelete(); 
+			$status = self::$model->adminDelete(); 
 			$url = 'admin.php?controller=admin&method=adminList';
 			switch ($status) {
 				case 0:
@@ -176,8 +167,7 @@
 		}
 
 		private function checkLogin() {
-			$model = M("admin");
-			switch ($model->login()) {
+			switch (self::$model->login()) {
 				case 0:
 					$this->showMessage("登录成功", "admin.php?controller=admin&method=admin");
 					break;
@@ -195,9 +185,8 @@
 		}
 
 		private function checkLogined() {
-			$model = M("admin");
-			if ($model->checkLogined()) {
-				$this->admin = $model->getAdmin();
+			if (self::$model->checkLogined()) {
+				$this->admin = self::$model->getAdmin();
 			}
 		}
 

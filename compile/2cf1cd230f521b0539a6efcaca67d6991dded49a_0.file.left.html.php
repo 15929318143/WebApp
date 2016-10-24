@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-21 14:17:21
+/* Smarty version 3.1.30, created on 2016-10-22 01:40:58
   from "F:\wamp64\www\Github\WebApp\template\admin\left.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580a23718de465_18590448',
+  'unifunc' => 'content_580ac3aab1e852_84934641',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2cf1cd230f521b0539a6efcaca67d6991dded49a' => 
     array (
       0 => 'F:\\wamp64\\www\\Github\\WebApp\\template\\admin\\left.html',
-      1 => 1477058828,
+      1 => 1477100456,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580a23718de465_18590448 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580ac3aab1e852_84934641 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,8 +51,8 @@ function content_580a23718de465_18590448 (Smarty_Internal_Template $_smarty_tpl)
 			</li><li>
 				<div class="option">商品管理</div>
 				<ul class="list">
-					<li><a href="admin.php?controller=goods&method=addGoods">添加商品</a></li>
-					<li><a href="admin.php?controller=goods&method=listGoods">商品列表</a></li>
+					<li><a href="admin.php?controller=goods&method=addGoods" target="rightFrame">添加商品</a></li>
+					<li><a href="admin.php?controller=goods&method=listGoods" target="rightFrame">商品列表</a></li>
 				</ul>
 			</li>
 			<li>

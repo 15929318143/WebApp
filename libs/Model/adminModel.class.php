@@ -70,6 +70,7 @@ class adminModel {
 	public function adminList() {
 		$sql = "SELECT count(*) as 'total' FROM `$this->_table`;";
 		$totalRows = DB::query($sql)->fetch_assoc()['total'];//所有记录的条数
+		if (!$totalRows) return array('rows'=>null);
 		$pageSize = 10;
 		$totalPage = ceil($totalRows/$pageSize);
 		//如果page不存在，或者为空，或者小于1，则赋其值为1
@@ -87,10 +88,7 @@ class adminModel {
 			'rows'=>$rows,
 			'pageBan'=>$pageBan
 			);
-		if ($data) {
-			$view = V('admin');
-			$view->adminList($data);
-		}
+		return $data?$data:array('rows'=>null);
 	}
 
 	public function adminUpdate() {

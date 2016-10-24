@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>管理员列表</title>
+	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
+	<script type="text/javascript" src='scripts/jquery-3.1.0.min.js'></script>
+	<script type="text/javascript" src='scripts/listCate.js'></script>
+	<link rel="stylesheet" href="scripts/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+	<script src="scripts/jquery-ui/js/jquery-1.10.2.js"></script>
+	<script src="scripts/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+	<script src="scripts/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+<body>
+<div id="adminList">
+	<center>
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<caption><a href="admin.php?controller=goods&method=addGoods">添加</a></caption>
+			<tr style="background-color: #E8E8E8;" class="field">
+				<td width="10%">编号</td>
+				<td width="40%">商品名称</td>
+				<td width="20%">商品分类</td>
+				<td width="9%">是否上架</td>
+				<td width="21%" colspan="3">操作</td>
+			</tr>
+			{for $i=0 to ($rows|@count)-1 }
+			<tr class="row">
+				<td><input type="checkbox" name="checkbox"/> {$i}</td>
+				<td>{$rows[$i].gName}</td>
+				<td>{$rows[$i].cName}</td>
+				{if $rows[$i].isShow == 1}
+				<td>YES</td>
+				{else}
+				<td>NO</td>
+				{/if}
+				<td>
+					<input type="button" class="btn" value="详情" onclick="showDetail({$rows[$i].id}, {$rows[$i].gName})"/>
+					<input type="button" class="btn" value="修改" onclick="editPro({$rows[$i].id})"/>
+					<input type="button" class="btn" value="删除" onclick="delPro({$rows[$i].id})"/>
+                    <div id="showDetail{$rows[$i].id}>" style="display:none;">
+                    	<table class="table" cellspacing="0" cellpadding="0">
+                    		<tr>
+                    			<td width="20%" align="right">商品名称</td>
+                    			<td><?php echo $row['pName'];?></td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品类别</td>
+                    			<td><?php echo $row['cName'];?></td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品货号</td>
+                    			<td><?php echo $row['pSn'];?></td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品数量</td>
+                    			<td><?php echo $row['pNum'];?></td>
+                    		</tr>
+                    		<tr>
+                    			<td  width="20%"  align="right">商品价格</td>
+                    			<td><?php echo $row['mPrice'];?></td>
+                    		</tr>
+                    		<tr>
+                    			<td  width="20%"  align="right">幕课网价格</td>
+                    			<td><?php echo $row['iPrice'];?></td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品图片</td>
+                    			<td>
+                    			<?php 
+                    			$proImgs=getAllImgByProId($row['id']);
+                    			foreach($proImgs as $img):
+                    			?>
+                    			<img width="100" height="100" src="uploads/<?php echo $img['albumPath'];?>" alt=""/> &nbsp;&nbsp;
+                    			<?php endforeach;?>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">是否上架</td>
+                    			<td>
+                    				<?php echo $row['isShow']==1?"上架":"下架";?>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">是否热卖</td>
+                    			<td>
+                    				<?php echo $row['isHot']==1?"热卖":"正常";?>
+                    			</td>
+                    		</tr>
+                    	</table>
+                    	<span style="display:block;width:80%; ">
+                    	商品描述<br/>
+                    	<?php echo $row['pDesc'];?>
+                    	</span>
+                    </div>
+				</td>
+			</tr>
+			{forelse}
+			<tr class="row">
+				<td colspan="5">暂无商品，是否<a href="admin.php?controller=goods&method=addGoods">添加</a>？</td>
+			</tr>
+			{/for}
+		</table>
+		{$pageBan['pageBan']|default:''}
+	</center>
+</div>
+</body>
+</html>

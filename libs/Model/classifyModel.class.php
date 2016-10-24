@@ -20,6 +20,7 @@ class classifyModel {
 	public function listCate() {
 		$sql = "SELECT count(*) as 'total' FROM `$this->_table`;";
 		$totalRows = DB::query($sql)->fetch_assoc()['total'];//所有记录的条数
+		if (!$totalRows) return array('rows'=>null);
 		$pageSize = 10;
 		$totalPage = ceil($totalRows/$pageSize);
 		//如果page不存在，或者为空，或者小于1，则赋其值为1
@@ -37,7 +38,7 @@ class classifyModel {
 			'rows'=>$rows,
 			'pageBan'=>$pageBan
 			);
-		return $data?$data:array();
+		return $data?$data:array('rows'=>null);
 	}
 
 	public function deleteCate() {

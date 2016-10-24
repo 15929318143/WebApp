@@ -4,53 +4,65 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>添加管理员</title>
 	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
+	<script type="text/javascript" src='scripts/jquery-3.1.0.min.js'></script>
+	<script type="text/javascript" src='scripts/tinymce/tinymce.min.js'></script>
+	<script type="text/javascript" src='scripts/tinymce/jquery.tinymce.min.js'></script>
+	<script>tinymce.init({ selector:'textarea' });</script>
+	<script type="text/javascript" src='scripts/addGoods.js'></script>
 </head>
 <body>
 <center>
 <div id="addGoods">
-		<form action="admin.php?controller=goods&method=addGoods" method="post" class="{$hidden|default:''}">
+		<form action="admin.php?controller=goods&method=addGoods" method="post" enctype="multipart/form-data" class="{$hidden|default:''}">
 			<table cellspacing="0" cellpadding="0" border="0" width="100%"> 
 				<caption>添加商品</caption>
 				<tr>
-					<td width="30%">商品名称</td>
+					<td width="20%">商品名称</td>
 					<td width="70%"><input type="text" name="gName" placeholder="请输入商品名称"></td>
 				</tr>
 				<tr>
-					<td width="30%">商品分类</td>
+					<td width="20%">商品分类</td>
 					<td width="70%">
-						<select name="gId">
-							{}
-							<option value="{}">{分类名称}</option>
-							{}
+						<select name="cId" class="{$hidden0|default:''}">
+							{for $i=0 to ($cates|@count)-1 }
+							<option value="{$cates[$i].id}">{$cates[$i].cName}</option>
+							{forelse}
 						</select>
+						<div class="noCate" style="float: left;margin-left: 53px;">暂无分类，请先<a href="admin.php?controller=classify&method=addCate">添加分类</a></div>
+							{/for}
 					</td>
 				</tr>
 				<tr>
-					<td width="30%">商品货号</td>
-					<td width="70%"><input type="text" name="gLabel" placeholder="请输入分类名称"></td>
+					<td width="20%">商品货号</td>
+					<td width="70%"><input type="text" name="gLabel" placeholder="请输入商品货号"></td>
 				</tr>
 				<tr>
-					<td width="30%">商品数量</td>
-					<td width="70%"><input type="text" name="gSum" placeholder="请输入分类名称"></td>
+					<td width="20%">商品数量</td>
+					<td width="70%"><input type="text" name="gSum" placeholder="请输入商品数量"></td>
 				</tr>
 				<tr>
-					<td width="30%">商品市场价</td>
-					<td width="70%"><input type="text" name="mPrice" placeholder="请输入分类名称"></td>
+					<td width="20%">商品市场价</td>
+					<td width="70%"><input type="text" name="mPrice" placeholder="请输入商品市场价"></td>
 				</tr>
 				<tr>
-					<td width="30%">商品东东价</td>
-					<td width="70%"><input type="text" name="gPrice" placeholder="请输入分类名称"></td>
+					<td width="20%">商品东东价</td>
+					<td width="70%"><input type="text" name="gPrice" placeholder="请输入商品东东价"></td>
 				</tr>
 				<tr>
-					<td width="30%">商品描述</td>
-					<td width="70%"><input type="text" name="gDesc" placeholder="请输入分类名称"></td>
+					<td width="20%">商品描述(300字内)</td>
+					<td width="70%">
+						<textarea name="gDesc" placeholder="请输入300字以内的商品描述……"></textarea>
+					</td>
 				</tr>
 				<tr>
-					<td width="30%">商品图像</td>
-					<td width="70%"><input type="text" name="gImg" placeholder="请输入分类名称"></td>
+					<td width="20%">商品图像</td>
+					<td width="70%">
+						<a href="javascript:void(0)" id="selectFileBtn">添加附件</a>
+						<div id="attachList" class="clear"></div>
+					</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" name="submit" value="添加分类"></td>
+					<td colspan="2"><input type="submit" name="submit" value="发布商品"></td>
 				</tr>
 			</table>
 		</form>

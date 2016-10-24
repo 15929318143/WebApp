@@ -23,13 +23,12 @@ DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods`(
 	`id`      smallint unsigned NOT NULL AUTO_INCREMENT,--主键
 	`gName`   varchar(255)  NOT NULL, --商品名称
-	`gId`     int unsigned  NOT NULL, --所属分类ID
+	`cId`     int unsigned  NOT NULL, --所属分类ID
 	`gLabel`  varchar(50)   NOT NULL, --商品货号
 	`gSum`    int unsigned  NOT NULL DEFAULT 0, --商品库存
 	`mPrice`  decimal(10, 2)NOT NULL, --市场价
 	`gPrice`  decimal(10, 2)NOT NULL, --网站价
 	`gDesc`   mediumtext,             --商品简介
-	`gImg`    varchar(255)  NOT NULL, --商品图片
 	`pubTime` int unsigned  NOT NULL, --商品上架时间
 	`isShow`  tinyint(1) NOT NULL DEFAULT 1, --商品是否上架
 	`isHot`   tinyint(1) NOT NULL DEFAULT 0, --商品是否热卖
@@ -54,7 +53,7 @@ CREATE TABLE `user`(
 DROP TABLE IF EXISTS `album`;
 CREATE TABLE `album`(
 	`id` int unsigned  NOT NULL AUTO_INCREMENT,
-	`gId` int unsigned NOT NULL, --对应的商品ID
+	`cId` int unsigned NOT NULL, --对应的商品分类ID
 	`albumPath` varchar(50) NOT NULL, --商品图片
 	PRIMARY KEY(`id`)
 )ENGINE = INNODB CHARSET = 'utf8';

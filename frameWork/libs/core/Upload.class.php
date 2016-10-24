@@ -47,7 +47,8 @@ class Upload {
 	}
 
 	private function check_file($files) {
-		$res = array();
+		$res = array();//用于保存文件上传信息
+		$msg = array();//返回$res, $flag
 		$maxSize = $this->maxSize;
 		$allowExt = $this->allowExt;
 		$flag = $this->flag;
@@ -76,6 +77,7 @@ class Upload {
 						$res[] = "PHP扩展程序中断文件上传";
 						break;
 				}
+				$msg['flag'] = false;
 				continue;
 			}
 			if ($file['error'] == 0){
@@ -104,12 +106,15 @@ class Upload {
 				$destination = $path.'/'.$name.$ext;
 				if (move_uploaded_file($file['tmp_name'], $destination)) {
 					$res[] = $destination;
+					$msg['flag'] = true;
 				} else {
 					$res[] = $file['name'].'上传失败';
+					$msg['flag'] = false;
 				}
 			}
 		}
-		return $res;
+		$msg['res'] = $res;
+		return $msg;
 	}
 
 	private function allow_ext() {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-21 04:24:50
+/* Smarty version 3.1.30, created on 2016-10-23 08:36:58
   from "F:\wamp64\www\Github\WebApp\template\admin\adminList.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580998929538e0_51128789',
+  'unifunc' => 'content_580c76aac96dd2_33487673',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2ef12275d19131e5c32abf0962299f53eccaee7a' => 
     array (
       0 => 'F:\\wamp64\\www\\Github\\WebApp\\template\\admin\\adminList.html',
-      1 => 1477015878,
+      1 => 1477100812,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580998929538e0_51128789 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580c76aac96dd2_33487673 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,7 +59,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 			</tr>
 			<?php }} else { ?>
 			<tr class="row">
-				<td colspan="5">暂无其他管理员，是否<a href="#">添加</a>？</td>
+				<td colspan="5">暂无其他管理员，是否<a href="admin.php?controller=admin&method=addAdminPage">添加</a>？</td>
 			</tr>
 			<?php }
 ?>
