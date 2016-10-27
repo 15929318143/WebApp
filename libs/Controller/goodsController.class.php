@@ -71,14 +71,10 @@ class goodsController {
 					break;
 				case 10:
 					$data = array(
-						'msg'=>"系统错误，操作商品表失败,请<a href=$url1>重新添加</a>,或者返回<a href=$url2>商品列表</a>"
+						'msg'=>"系统错误，发布商品失败,请<a href=$url1>重新添加</a>,或者返回<a href=$url2>商品列表</a>"
 						);
 					break;
-				case 11:
-					$data = array(
-						'msg'=>"系统错误，操作相册表失败,请<a href=$url1>重新添加</a>,或者返回<a href=$url2>商品列表</a>"
-						);
-					break;
+				default:break;
 			}
 			$data['hidden'] = 'hidden';
 		} else {

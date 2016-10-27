@@ -53,7 +53,7 @@ CREATE TABLE `user`(
 DROP TABLE IF EXISTS `album`;
 CREATE TABLE `album`(
 	`id` int unsigned  NOT NULL AUTO_INCREMENT,
-	`cId` int unsigned NOT NULL, --对应的商品分类ID
+	`gId` int unsigned NOT NULL, --对应的商品ID
 	`albumPath` varchar(50) NOT NULL, --商品图片
 	PRIMARY KEY(`id`)
 )ENGINE = INNODB CHARSET = 'utf8';

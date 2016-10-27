@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-23 10:55:27
+/* Smarty version 3.1.30, created on 2016-10-26 14:02:21
   from "F:\wamp64\www\Github\WebApp\template\admin\goods\listGoods.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580c971f28e027_72135065',
+  'unifunc' => 'content_5810b76dd22758_73152264',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c60782c1eb2ca684d21ff0271ce7c79a85d1100e' => 
     array (
       0 => 'F:\\wamp64\\www\\Github\\WebApp\\template\\admin\\goods\\listGoods.html',
-      1 => 1477220125,
+      1 => 1477310392,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_580c971f28e027_72135065 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5810b76dd22758_73152264 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,6 +33,16 @@ function content_580c971f28e027_72135065 (Smarty_Internal_Template $_smarty_tpl)
 >
 	<?php echo '<script'; ?>
  type="text/javascript" src='scripts/listCate.js'><?php echo '</script'; ?>
+>
+	<link rel="stylesheet" href="scripts/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+	<?php echo '<script'; ?>
+ src="scripts/jquery-ui/js/jquery-1.10.2.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="scripts/jquery-ui/js/jquery-ui-1.10.4.custom.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="scripts/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"><?php echo '</script'; ?>
 >
 </head>
 <body>
@@ -64,12 +74,77 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 				<?php } else { ?>
 				<td>NO</td>
 				<?php }?>
-				<td><a href="admin.php?controller=goods&method=updateCate&id=<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['id'];?>
-">详情</a></td>
-				<td><a href="admin.php?controller=goods&method=updateGoods&id=<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['id'];?>
-">修改</a></td>
-				<td><a href="admin.php?controller=goods&method=deleteGoods&id=<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['id'];?>
-" class="del">删除</a></td>
+				<td>
+					<input type="button" class="btn" value="详情" onclick="showDetail(<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['id'];?>
+, <?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['gName'];?>
+)"/>
+					<input type="button" class="btn" value="修改" onclick="editPro(<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['id'];?>
+)"/>
+					<input type="button" class="btn" value="删除" onclick="delPro(<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['id'];?>
+)"/>
+                    <div id="showDetail<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['id'];?>
+>" style="display:none;">
+                    	<table class="table" cellspacing="0" cellpadding="0">
+                    		<tr>
+                    			<td width="20%" align="right">商品名称</td>
+                    			<td><?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['gName'];?>
+</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品类别</td>
+                    			<td><?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['cName'];?>
+</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品货号</td>
+                    			<td><?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['gLabel'];?>
+</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品数量</td>
+                    			<td><?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['gSum'];?>
+</td>
+                    		</tr>
+                    		<tr>
+                    			<td  width="20%"  align="right">商品价格</td>
+                    			<td><?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['mPrice'];?>
+</td>
+                    		</tr>
+                    		<tr>
+                    			<td  width="20%"  align="right">东东网价格</td>
+                    			<td><?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['i']->value]['gPrice'];?>
+</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">商品图片</td>
+                    			<td>
+                    			<?php echo '<?php 
+                    			';?>$proImgs=getAllImgByProId($row['id']);
+                    			foreach($proImgs as $img):
+                    			<?php echo '?>';?>
+                    			<img width="100" height="100" src="uploads/<?php echo '<?php ';?>echo $img['albumPath'];<?php echo '?>';?>" alt=""/> &nbsp;&nbsp;
+                    			<?php echo '<?php ';?>endforeach;<?php echo '?>';?>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">是否上架</td>
+                    			<td>
+                    				<?php echo '<?php ';?>echo $row['isShow']==1?"上架":"下架";<?php echo '?>';?>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td width="20%"  align="right">是否热卖</td>
+                    			<td>
+                    				<?php echo '<?php ';?>echo $row['isHot']==1?"热卖":"正常";<?php echo '?>';?>
+                    			</td>
+                    		</tr>
+                    	</table>
+                    	<span style="display:block;width:80%; ">
+                    	商品描述<br/>
+                    	<?php echo '<?php ';?>echo $row['pDesc'];<?php echo '?>';?>
+                    	</span>
+                    </div>
+				</td>
 			</tr>
 			<?php }} else { ?>
 			<tr class="row">

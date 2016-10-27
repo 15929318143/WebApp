@@ -13,6 +13,8 @@ class goodsModel {
 	}
 
 	public function addGoods() {
+		//开启事务
+		DB::query('BEGIN');
 		//1.先处理表单内容
 		$arr = $_POST;
 		if (!$arr['gName'])  return 1;
@@ -24,6 +26,7 @@ class goodsModel {
 		if (!$arr['gDesc']=strip_tags($arr['gDesc']))  return 7;
 		unset($arr['submit']);
 		$arr['pubTime'] = time();
+		$res1 = DB::add($this->_gtable, $arr);
 
 		//2.先处理上传文件
 		$files = isset($_FILES)&&!empty($_FILES)?$_FILES:null;
@@ -41,7 +44,7 @@ class goodsModel {
 		for ($i=0; $i < count($imgs); $i++) { 
 			//偷个懒，少写个循环,在这里生成上传到相册表的数据
 			$data[] = array(
-				'gId' => $arr['id'],
+				'gId' => $res1,
 				'albumPath' => $imgs[$i]
 				);
 			$thumb = new Thumb($imgs[$i]);
@@ -53,25 +56,15 @@ class goodsModel {
 				$thumb->save($path.$save);
 			}
 		}
-		//4.先执行上传图片到数据库，因为当商品添加失败的时候，删除商品相册的操作相对容易
-		if ($this->insertMultiArr($data)) {
-			//5.添加商品到数据库，成功则返回状态0，否则删除当前商品的相册记录
-			//  并删除压缩图片
-			if (DB::add($this->_gtable, $arr)) {
-				return 0;
-			} else {
-				$where = "`cId`=".$data['cId'];
-				DB::del($this->_atable, $where);
-
-				for ($i=0; $i < count($res['res']); $i++) { 
-					$filename = preg_replace("/$savePath/", '', $res['res'][$i]);
-					unlink($savePath.$filename);
-				}
-				return 10;
-			}
+		$res2 = $this->insertMultiArr($data);
+		if ($res1 && $res2) {
+			DB::query('COMMIT');
+			return 0;
 		} else {
-			return 11;
+			DB::query('ROLLBACK');
+			return 10;
 		}
+		
 	}
 
 	public function listGoods() {

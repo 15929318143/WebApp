@@ -41,27 +41,27 @@
                     	<table class="table" cellspacing="0" cellpadding="0">
                     		<tr>
                     			<td width="20%" align="right">商品名称</td>
-                    			<td><?php echo $row['pName'];?></td>
+                    			<td>{$rows[$i].gName}</td>
                     		</tr>
                     		<tr>
                     			<td width="20%"  align="right">商品类别</td>
-                    			<td><?php echo $row['cName'];?></td>
+                    			<td>{$rows[$i].cName}</td>
                     		</tr>
                     		<tr>
                     			<td width="20%"  align="right">商品货号</td>
-                    			<td><?php echo $row['pSn'];?></td>
+                    			<td>{$rows[$i].gLabel}</td>
                     		</tr>
                     		<tr>
                     			<td width="20%"  align="right">商品数量</td>
-                    			<td><?php echo $row['pNum'];?></td>
+                    			<td>{$rows[$i].gSum}</td>
                     		</tr>
                     		<tr>
                     			<td  width="20%"  align="right">商品价格</td>
-                    			<td><?php echo $row['mPrice'];?></td>
+                    			<td>{$rows[$i].mPrice}</td>
                     		</tr>
                     		<tr>
-                    			<td  width="20%"  align="right">幕课网价格</td>
-                    			<td><?php echo $row['iPrice'];?></td>
+                    			<td  width="20%"  align="right">东东网价格</td>
+                    			<td>{$rows[$i].gPrice}</td>
                     		</tr>
                     		<tr>
                     			<td width="20%"  align="right">商品图片</td>

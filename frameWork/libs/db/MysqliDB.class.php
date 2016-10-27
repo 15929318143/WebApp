@@ -68,7 +68,8 @@ class MysqliDB {
 		self::$stmt = $mysqli->prepare($sql);
 		$res = self::$stmt->execute();
 		if (!$res) self::throwErr('预处理执行失败');
-		return $res;
+		return $mysqli->insert_id;
+
 	}
 
 	/*
