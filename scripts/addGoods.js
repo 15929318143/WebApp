@@ -23,9 +23,5 @@ $(document).ready(function () {
 				$(this).closest('.attachItem').remove();
 			});
 		});
-		/*$('.attachItem').on('click', 'a', function () {
-			$(this).parents('.attachItem').remove();
-			$(this).parents('.attachItem').prev('input').remove();
-		});*/
 	});
 });

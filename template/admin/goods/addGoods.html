@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>添加管理员</title>
+	<title>商品管理</title>
 	<link rel="stylesheet" type="text/css" href="styles/admin.css"/>
 	<script type="text/javascript" src='scripts/jquery-3.1.0.min.js'></script>
 	<script type="text/javascript" src='scripts/tinymce/tinymce.min.js'></script>
@@ -15,6 +15,7 @@
 <div id="addGoods">
 		<form action="admin.php?controller=goods&method=addGoods" method="post" enctype="multipart/form-data" class="{$hidden|default:''}">
 			<table cellspacing="0" cellpadding="0" border="0" width="100%"> 
+			{if !$row.id|default:''}
 				<caption>添加商品</caption>
 				<tr>
 					<td width="20%">商品名称</td>
@@ -64,6 +65,63 @@
 				<tr>
 					<td colspan="2"><input type="submit" name="submit" value="发布商品"></td>
 				</tr>
+			{else}
+				<input type="hidden" name="id" value="{$row.id|default:''}">
+				<input type="hidden" name="old_cId" value="{$row.cId|default:''}">
+				<caption>更新商品</caption>
+				<tr>
+					<td width="20%">商品名称</td>
+					<td width="70%"><input type="text" name="gName" placeholder="{$row.gName|default:''}"></td>
+				</tr>
+				<tr>
+					<td width="20%">商品分类</td>
+					<td width="70%">
+						<select name="cId" class="{$hidden0|default:''}">
+							{for $i=0 to ($cates|@count)-1 }
+								{if $row.cId|default:''==$cates[$i].id}
+							<option value="{$cates[$i].id}" selected="selected">{$cates[$i].cName}</option>
+								{else}
+							<option value="{$cates[$i].id}">{$cates[$i].cName}</option>
+								{/if}
+							{forelse}
+						</select>
+						<div class="noCate" style="float: left;margin-left: 53px;">暂无分类，请先<a href="admin.php?controller=classify&method=addCate">添加分类</a></div>
+							{/for}
+					</td>
+				</tr>
+				<tr>
+					<td width="20%">商品货号</td>
+					<td width="70%"><input type="text" name="gLabel" placeholder="{$row.gLabel|default:''}"></td>
+				</tr>
+				<tr>
+					<td width="20%">商品数量</td>
+					<td width="70%"><input type="text" name="gSum" placeholder="{$row.gSum|default:''}"></td>
+				</tr>
+				<tr>
+					<td width="20%">商品市场价</td>
+					<td width="70%"><input type="text" name="mPrice" placeholder="{$row.mPrice|default:''}"></td>
+				</tr>
+				<tr>
+					<td width="20%">商品东东价</td>
+					<td width="70%"><input type="text" name="gPrice" placeholder="{$row.gPrice|default:''}"></td>
+				</tr>
+				<tr>
+					<td width="20%">商品描述(300字内)</td>
+					<td width="70%">
+						<textarea name="gDesc" placeholder="{$row.gDesc|default:''}"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td width="20%">商品图像</td>
+					<td width="70%">
+						<a href="javascript:void(0)" id="selectFileBtn">添加附件</a>
+						<div id="attachList" class="clear"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" name="submit" value="更新商品"></td>
+				</tr>
+			{/if}
 			</table>
 		</form>
 		{$msg|default:''}

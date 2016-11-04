@@ -121,7 +121,6 @@ class MysqliDB {
 				.self::parseWhere($where)
 				.self::parseOrder($order)
 				.self::parseLimit($limit).";";
-		echo $sql;
 		return self::execute($sql);
 	}
 	//3.1普通的查找方法
