@@ -69,6 +69,7 @@ class MysqliDB {
 		$res = self::$stmt->execute();
 		if (!$res) self::throwErr('预处理执行失败');
 		return $mysqli->insert_id;
+		// return $mysqli->affected_rows;
 
 	}
 

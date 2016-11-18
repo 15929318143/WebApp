@@ -2,38 +2,40 @@
 class indexController {
 
 	private $user = "";//当前用户
-	private $view;
+	public static $view;
+	public static $model;
 
 	public function __construct() {
-		$this->view = V('index');
-		$model = M('index');
-		$this->user = $model->getUser();
+		self::$model = M('index');
+		self::$view = V('index');
+		$this->user = self::$model->getUser();
 	}
 
 	//前端首页
 	public function index() {
-		$this->view->index();
+		$data = self::$model->getGoods();
+		self::$view->index($data);
 	}
 
 	//产品分类页
 	public function classify() {
-		$this->view->classify();
+		self::$view->classify();
 	}
 
 	//商品介绍页
 
 	public function description() {
-		$this->view->description();
+		self::$view->description();
 	}
 
 	//筛选页
 	public function screen() {
-		$this->view->screen();
+		self::$view->screen();
 	}
 
 	//购物车页
 	public function settlement() {
-		$this->view->settlement();
+		self::$view->settlement();
 	}
 }
 ?>

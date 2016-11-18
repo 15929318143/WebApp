@@ -240,14 +240,6 @@
 					</dd>
 				</dl>
 			</div>
-			<!-- <div class="channel">
-				<dl>
-					<dd>
-						<a href="#">电脑整机频道<img src="imgs/icon/point_to.png"></a>
-						<a href="#">硬件/外设频道<img src="imgs/icon/point_to.png"></a>
-					</dd>
-				</dl>
-			</div> -->
 		</div>
 		<div class="bigBan comWidth">
 			<div class="banner">
@@ -261,10 +253,11 @@
 			</div>
 		</div>
 	</div>
+	{for $i=0 to ($cates|@count)-1}
 	<div class="persionalCpt comWidth">
 		<div class="showTitle leftFloat">
 			<ul>
-				<li class="leftFloat left">家用电脑</li>
+				<li class="leftFloat left">{$cates[$i].cName}</li>
 				<li class="rightFloat"><a href="#" class=" more">更多&gt;&gt;&gt;</a></li>
 			</ul>
 		</div>
@@ -281,12 +274,20 @@
 				</div>
 			</div>
 			<div class="imgList leftFloat">
+			{for $j=0 to ($rows|@count)-1}
+				{if $rows[$j].cId==$cates[$i].id}
 				<div class="picBox leftFloat">
 					<div class="upPic">
 						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
+						{for $k=0 to ($images|@count-1)}
+							{if $images[$k].gId==$rows[$j].id}
+							<img src="{$images[$k].albumPath}" alt=""/>
+							{else}
+							<img src="" alt="请上传图片"/>
+							{/if}
+						{/for}
+							<p class="p1">{$rows[$j].gName}</p>
+							<p class="p2">￥{$rows[$j].gPrice}</p>
 						</a>
 					</div>
 					<div class="downPic">
@@ -296,138 +297,16 @@
 						</a>
 					</div>
 				</div>
-				<div class="picBox leftFloat">
-					<div class="upPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
-						</a>
-					</div>
-					<div class="downPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt="">
-							<p class="p3">NFC技术一碰轻松配对！接触屏幕<br><span>￥1800</span></p>
-						</a>
-					</div>
-				</div>
-				<div class="picBox leftFloat">
-					<div class="upPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
-						</a>
-					</div>
-					<div class="downPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt="">
-							<p class="p3">NFC技术一碰轻松配对！接触屏幕<br><span>￥1800</span></p>
-						</a>
-					</div>
-				</div>
-				<div class="picBox leftFloat">
-					<div class="upPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
-						</a>
-					</div>
-					<div class="downPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt="">
-							<p class="p3">NFC技术一碰轻松配对！接触屏幕<br><span>￥1800</span></p>
-						</a>
-					</div>
-				</div>
+				{/if}
+			{/for}
 			</div>
 		</div>
 	</div>
-	<div class="persionalCpt comWidth">
-		<div class="showTitle leftFloat">
-			<ul>
-				<li class="leftFloat left">家用电脑</li>
-				<li class="rightFloat"><a href="#" class=" more">更多&gt;&gt;&gt;</a></li>
-			</ul>
-		</div>
-		<div class="showDetail comWidth">
-			<div class="smallBan">
-				<div class="banner2">
-					<ul class="imgBox2">
-						<li><img src="images/banner/banner_sm_01.jpg" alt="small banner"></li>
-						<li><img src="images/banner/banner_sm_02.jpg" alt="small banner"></li>
-					</ul>
-					<ul class="imgIndex2">
-					<li><a href="#" class="active"></a><a href="#"></a><a href="#"></a></li>
-				</ul>
-				</div>
-			</div>
-			<div class="imgList leftFloat">
-				<div class="picBox leftFloat">
-					<div class="upPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
-						</a>
-					</div>
-					<div class="downPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt="">
-							<p class="p3">NFC技术一碰轻松配对！接触屏幕<br><span>￥1800</span></p>
-						</a>
-					</div>
-				</div>
-				<div class="picBox leftFloat">
-					<div class="upPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
-						</a>
-					</div>
-					<div class="downPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt="">
-							<p class="p3">NFC技术一碰轻松配对！接触屏幕<br><span>￥1800</span></p>
-						</a>
-					</div>
-				</div>
-				<div class="picBox leftFloat">
-					<div class="upPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
-						</a>
-					</div>
-					<div class="downPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt="">
-							<p class="p3">NFC技术一碰轻松配对！接触屏幕<br><span>￥1800</span></p>
-						</a>
-					</div>
-				</div>
-				<div class="picBox leftFloat">
-					<div class="upPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt=""/>
-							<p class="p1">HTC新渴望8系列</p>
-							<p class="p2">￥1800</p>
-						</a>
-					</div>
-					<div class="downPic">
-						<a href="#">
-							<img src="images/shopImg.jpg" alt="">
-							<p class="p3">NFC技术一碰轻松配对！接触屏幕<br><span>￥1800</span></p>
-						</a>
-					</div>
-				</div>
-				
-			</div>
-		</div>
+	{forelse}
+	<div>
+		
 	</div>
+	{/for}
 </div>
 <div id="footer">
 	<div class="foot comWidth">

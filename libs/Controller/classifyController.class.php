@@ -58,7 +58,7 @@ class classifyController {
 		if ($del == 'yes') {
 			$url = 'admin.php?controller=classify&method=listCate';
 			if (self::$model->deleteCate()) {
-				$this->showMsg('删除分类成功', $url);
+				$this->showMsg('删除分类成功，并且删除了该分类下的所有商品', $url);
 			} else {
 				$this->showMsg('删除分类失败', $url);
 			}

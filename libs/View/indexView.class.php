@@ -8,7 +8,8 @@ class indexView {
 		# code...
 	}
 
-	public function index() {
+	public function index($data='') {
+		if ($data) VIEW::assign($data);
 		VIEW::display('template/index.html');
 	}
 

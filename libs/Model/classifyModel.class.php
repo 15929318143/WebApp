@@ -5,6 +5,7 @@
 class classifyModel {
 	
 	private $_table = 'category';
+	private $_gtable = 'goods';
 
 	public function __construct() {
 		# code...
@@ -43,8 +44,26 @@ class classifyModel {
 
 	public function deleteCate() {
 		$id = isset($_GET['id'])&&!empty($_GET['id'])?$_GET['id']:'';
+		DB::query('BEGIN');
+		//删除该分类下的全部商品
+		$where = "`cId`=$id";
+		//如果有商品则删除
+		if (DB::find($this->_gtable, $where)) {
+			$r1 = DB::del($this->_gtable, $where);
+		//如果没有，将$r1=true，方便下面操作
+		} else {
+			$r1 = true;
+		}
+		//删除该分类
 		$where = "`id`= $id";
-		return DB::del($this->_table, $where)?true:false;
+		$r2 = DB::del($this->_table, $where);
+		if ($r1 && $r2) {
+			DB::query('COMMIT');
+			return true;
+		} else {
+			DB::query('ROLLBACK');
+			return false;
+		}
 	}
 
 	public function updateCate() {
