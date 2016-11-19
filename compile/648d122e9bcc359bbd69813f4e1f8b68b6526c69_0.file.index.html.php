@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-18 03:14:26
+/* Smarty version 3.1.30, created on 2016-11-19 01:21:33
   from "F:\wamp64\www\Github\WebApp\template\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_582e7212672e23_47153172',
+  'unifunc' => 'content_582fa91da03790_68009561',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '648d122e9bcc359bbd69813f4e1f8b68b6526c69' => 
     array (
       0 => 'F:\\wamp64\\www\\Github\\WebApp\\template\\index.html',
-      1 => 1479438864,
+      1 => 1479518490,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_582e7212672e23_47153172 (Smarty_Internal_Template $_smarty_tpl) {
+function content_582fa91da03790_68009561 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -286,14 +286,14 @@ function content_582e7212672e23_47153172 (Smarty_Internal_Template $_smarty_tpl)
 		</div>
 	</div>
 	<?php
-$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? (count($_smarty_tpl->tpl_vars['cates']->value))-1+1 - (0) : 0-((count($_smarty_tpl->tpl_vars['cates']->value))-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? (count($_smarty_tpl->tpl_vars['goods']->value))-1+1 - (0) : 0-((count($_smarty_tpl->tpl_vars['goods']->value))-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
 	<div class="persionalCpt comWidth">
 		<div class="showTitle leftFloat">
 			<ul>
-				<li class="leftFloat left"><?php echo $_smarty_tpl->tpl_vars['cates']->value[$_smarty_tpl->tpl_vars['i']->value]['cName'];?>
+				<li class="leftFloat left"><?php echo $_smarty_tpl->tpl_vars['goods']->value[$_smarty_tpl->tpl_vars['i']->value]['cName'];?>
 </li>
 				<li class="rightFloat"><a href="#" class=" more">更多&gt;&gt;&gt;</a></li>
 			</ul>
@@ -306,38 +306,24 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 						<li><img src="images/banner/banner_sm_02.jpg" alt="small banner"></li>
 					</ul>
 					<ul class="imgIndex2">
-					<li><a href="#" class="active"></a><a href="#"></a><a href="#"></a></li>
-				</ul>
+						<li><a href="#" class="active"></a><a href="#"></a><a href="#"></a></li>
+					</ul>
 				</div>
 			</div>
 			<div class="imgList leftFloat">
 			<?php
-$_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['j']->step = 1;$_smarty_tpl->tpl_vars['j']->total = (int) ceil(($_smarty_tpl->tpl_vars['j']->step > 0 ? (count($_smarty_tpl->tpl_vars['rows']->value))-1+1 - (0) : 0-((count($_smarty_tpl->tpl_vars['rows']->value))-1)+1)/abs($_smarty_tpl->tpl_vars['j']->step));
+$_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['j']->step = 1;$_smarty_tpl->tpl_vars['j']->total = (int) ceil(($_smarty_tpl->tpl_vars['j']->step > 0 ? (count($_smarty_tpl->tpl_vars['goods']->value[$_smarty_tpl->tpl_vars['i']->value]['rows']))-1+1 - (0) : 0-((count($_smarty_tpl->tpl_vars['goods']->value[$_smarty_tpl->tpl_vars['i']->value]['rows']))-1)+1)/abs($_smarty_tpl->tpl_vars['j']->step));
 if ($_smarty_tpl->tpl_vars['j']->total > 0) {
 for ($_smarty_tpl->tpl_vars['j']->value = 0, $_smarty_tpl->tpl_vars['j']->iteration = 1;$_smarty_tpl->tpl_vars['j']->iteration <= $_smarty_tpl->tpl_vars['j']->total;$_smarty_tpl->tpl_vars['j']->value += $_smarty_tpl->tpl_vars['j']->step, $_smarty_tpl->tpl_vars['j']->iteration++) {
 $_smarty_tpl->tpl_vars['j']->first = $_smarty_tpl->tpl_vars['j']->iteration == 1;$_smarty_tpl->tpl_vars['j']->last = $_smarty_tpl->tpl_vars['j']->iteration == $_smarty_tpl->tpl_vars['j']->total;?>
-				<?php if ($_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['j']->value]['cId'] == $_smarty_tpl->tpl_vars['cates']->value[$_smarty_tpl->tpl_vars['i']->value]['id']) {?>
 				<div class="picBox leftFloat">
 					<div class="upPic">
 						<a href="#">
-						<?php
-$_smarty_tpl->tpl_vars['k'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['k']->step = 1;$_smarty_tpl->tpl_vars['k']->total = (int) ceil(($_smarty_tpl->tpl_vars['k']->step > 0 ? (count($_smarty_tpl->tpl_vars['images']->value)-1)+1 - (0) : 0-((count($_smarty_tpl->tpl_vars['images']->value)-1))+1)/abs($_smarty_tpl->tpl_vars['k']->step));
-if ($_smarty_tpl->tpl_vars['k']->total > 0) {
-for ($_smarty_tpl->tpl_vars['k']->value = 0, $_smarty_tpl->tpl_vars['k']->iteration = 1;$_smarty_tpl->tpl_vars['k']->iteration <= $_smarty_tpl->tpl_vars['k']->total;$_smarty_tpl->tpl_vars['k']->value += $_smarty_tpl->tpl_vars['k']->step, $_smarty_tpl->tpl_vars['k']->iteration++) {
-$_smarty_tpl->tpl_vars['k']->first = $_smarty_tpl->tpl_vars['k']->iteration == 1;$_smarty_tpl->tpl_vars['k']->last = $_smarty_tpl->tpl_vars['k']->iteration == $_smarty_tpl->tpl_vars['k']->total;?>
-							<?php if ($_smarty_tpl->tpl_vars['images']->value[$_smarty_tpl->tpl_vars['k']->value]['gId'] == $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['j']->value]['id']) {?>
-							<img src="<?php echo $_smarty_tpl->tpl_vars['images']->value[$_smarty_tpl->tpl_vars['k']->value]['albumPath'];?>
+							<img src="<?php echo $_smarty_tpl->tpl_vars['goods']->value[$_smarty_tpl->tpl_vars['i']->value]['rows'][$_smarty_tpl->tpl_vars['j']->value]['albumPath'];?>
 " alt=""/>
-							<?php } else { ?>
-							<img src="" alt="请上传图片"/>
-							<?php }?>
-						<?php }
-}
-?>
-
-							<p class="p1"><?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['j']->value]['gName'];?>
+							<p class="p1"><?php echo $_smarty_tpl->tpl_vars['goods']->value[$_smarty_tpl->tpl_vars['i']->value]['rows'][$_smarty_tpl->tpl_vars['j']->value]['gName'];?>
 </p>
-							<p class="p2">￥<?php echo $_smarty_tpl->tpl_vars['rows']->value[$_smarty_tpl->tpl_vars['j']->value]['gPrice'];?>
+							<p class="p2">￥<?php echo $_smarty_tpl->tpl_vars['goods']->value[$_smarty_tpl->tpl_vars['i']->value]['rows'][$_smarty_tpl->tpl_vars['j']->value]['gPrice'];?>
 </p>
 						</a>
 					</div>
@@ -348,7 +334,6 @@ $_smarty_tpl->tpl_vars['k']->first = $_smarty_tpl->tpl_vars['k']->iteration == 1
 						</a>
 					</div>
 				</div>
-				<?php }?>
 			<?php }
 }
 ?>

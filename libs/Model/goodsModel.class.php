@@ -143,7 +143,7 @@ class goodsModel {
 		$pageBanner = new PageBanner($page, $this->_gtable, $totalPage, $pageSize, $controller, $method);
 		$offset = ($page-1)*$pageSize;
 		//获取商品的基本信息
-		$sql = "SELECT g.id, g.gName, g.gLabel, g.gSum, g.mPrice, g.gPrice, g.gDesc, g.pubTime, g.isShow, g.isHot, c.cName FROM `{$this->_gtable}` g join `{$this->_ctable}` c on g.cId=c.id LIMIT {$offset}, {$pageSize};";
+		$sql = "SELECT g.id, g.gName, g.gLabel, g.gSum, g.mPrice, g.gPrice, g.gDesc, g.pubTime, g.isShow, g.isHot, c.cName FROM `{$this->_gtable}` g join `{$this->_ctable}` c on g.cId=c.id ORDER BY g.id, c.cName DESC LIMIT {$offset}, {$pageSize};";
 		$rows = DB::get_all($sql);
 		//获取商品的图片
 		$sql = "SELECT g.id, a.albumPath FROM `{$this->_gtable}` g join `{$this->_atable}` a on g.id=a.gId;";

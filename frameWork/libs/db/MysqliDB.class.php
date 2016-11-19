@@ -68,8 +68,7 @@ class MysqliDB {
 		self::$stmt = $mysqli->prepare($sql);
 		$res = self::$stmt->execute();
 		if (!$res) self::throwErr('预处理执行失败');
-		return $mysqli->insert_id;
-		// return $mysqli->affected_rows;
+		return array('lastinsertid'=>$mysqli->insert_id, 'affectedrows'=>$mysqli->affected_rows);
 
 	}
 
@@ -98,7 +97,8 @@ class MysqliDB {
 		$keys = join(',', $keys);
 		$values = "'".join("','", array_values($data))."'";
 		$sql = "INSERT INTO {$table}({$keys}) VALUES({$values});";
-		return self::execute($sql);
+		$res = self::execute($sql);
+		return $res['lastinsertid'];
 	}
 	//2.2删除(delete)记录
 	public function del($table, $where=null, $order=null, $limit=0) {
@@ -107,8 +107,8 @@ class MysqliDB {
 				.self::parseWhere($where)
 				.self::parseOrder($order)
 				.self::parseLimit($limit);
-		return self::execute($sql);
-
+		$res = self::execute($sql);
+		return $res['affectedrows'];
 	}
 	//2.3修改(update)记录
 	public function update($table, $data, $where=null, $order=null, $limit=0) {
@@ -122,7 +122,8 @@ class MysqliDB {
 				.self::parseWhere($where)
 				.self::parseOrder($order)
 				.self::parseLimit($limit).";";
-		return self::execute($sql);
+		$res = self::execute($sql);
+		return $res['affectedrows'];
 	}
 	//3.1普通的查找方法
 	public function find($table, $where='', $group='', $having='', $order='', $limit='', $fields='*') {

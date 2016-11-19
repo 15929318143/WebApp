@@ -253,11 +253,11 @@
 			</div>
 		</div>
 	</div>
-	{for $i=0 to ($cates|@count)-1}
+	{for $i=0 to ($goods|@count)-1}
 	<div class="persionalCpt comWidth">
 		<div class="showTitle leftFloat">
 			<ul>
-				<li class="leftFloat left">{$cates[$i].cName}</li>
+				<li class="leftFloat left">{$goods[$i].cName}</li>
 				<li class="rightFloat"><a href="#" class=" more">更多&gt;&gt;&gt;</a></li>
 			</ul>
 		</div>
@@ -269,25 +269,18 @@
 						<li><img src="images/banner/banner_sm_02.jpg" alt="small banner"></li>
 					</ul>
 					<ul class="imgIndex2">
-					<li><a href="#" class="active"></a><a href="#"></a><a href="#"></a></li>
-				</ul>
+						<li><a href="#" class="active"></a><a href="#"></a><a href="#"></a></li>
+					</ul>
 				</div>
 			</div>
 			<div class="imgList leftFloat">
-			{for $j=0 to ($rows|@count)-1}
-				{if $rows[$j].cId==$cates[$i].id}
+			{for $j=0 to ($goods[$i].rows|@count)-1}
 				<div class="picBox leftFloat">
 					<div class="upPic">
 						<a href="#">
-						{for $k=0 to ($images|@count-1)}
-							{if $images[$k].gId==$rows[$j].id}
-							<img src="{$images[$k].albumPath}" alt=""/>
-							{else}
-							<img src="" alt="请上传图片"/>
-							{/if}
-						{/for}
-							<p class="p1">{$rows[$j].gName}</p>
-							<p class="p2">￥{$rows[$j].gPrice}</p>
+							<img src="{$goods[$i].rows[$j].albumPath}" alt=""/>
+							<p class="p1">{$goods[$i].rows[$j].gName}</p>
+							<p class="p2">￥{$goods[$i].rows[$j].gPrice}</p>
 						</a>
 					</div>
 					<div class="downPic">
@@ -297,7 +290,6 @@
 						</a>
 					</div>
 				</div>
-				{/if}
 			{/for}
 			</div>
 		</div>
